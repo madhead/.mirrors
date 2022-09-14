@@ -37,3 +37,18 @@ resource "gitlab_project" "docker-oracle-xe" {
   container_registry_enabled = false
   packages_enabled           = false
 }
+
+resource "gitlab_project" "docker-imagemagick" {
+  name                       = "docker-imagemagick"
+  namespace_id               = gitlab_group.madhead-docker.id
+  visibility_level           = "public"
+  import_url                 = "https://github.com/madhead/docker-imagemagick.git"
+  mirror                     = true
+  issues_enabled             = false
+  merge_requests_enabled     = false
+  pipelines_enabled          = false
+  wiki_enabled               = false
+  snippets_enabled           = false
+  container_registry_enabled = false
+  packages_enabled           = false
+}
